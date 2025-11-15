@@ -16,8 +16,8 @@ const [newMessage, setNewMessage] = useState("");
   };
 
   return (
-    <main className="flex-1 flex flex-col h-[calc(100vh-3.5rem)] mb-14 md:mb-0">
-      <div className="border-b px-4 py-3 bg-background/60 backdrop-blur-md">
+    <main className="flex-1 flex flex-col h-[calc(100vh-3.5rem)] mb-14 md:mb-0 w-full max-w-4xl mx-auto md:border-l md:border-r border-default-200">
+      <div className="border-b border-default-200 px-4 py-3 bg-background/60 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <Icon icon="material-symbols:chat" fontSize={24} className="text-primary" />
           <div>
@@ -29,8 +29,8 @@ const [newMessage, setNewMessage] = useState("");
       <div className="flex-1">
         {}
       </div>
-      <form onSubmit={handleSendMessage} className="border-t p-3 bg-background/60 backdrop-blur-md">
-        <div className="flex gap-2">
+      <form onSubmit={handleSendMessage} className="border-t border-default-200 p-3 bg-background/60 backdrop-blur-md">
+        <div className="flex gap-2 ">
           <Input
             placeholder="Escribe un mensaje"
             value={newMessage}
