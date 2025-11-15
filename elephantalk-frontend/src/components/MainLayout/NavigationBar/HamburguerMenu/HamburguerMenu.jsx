@@ -7,11 +7,7 @@ function HamburguerMenu({ setIsMenuOpen }) {
     <NavbarMenu className="items-center">
       <HamburguerLink setIsMenuOpen={setIsMenuOpen} to="/" name="Home" />
 
-      <HamburguerLink
-        setIsMenuOpen={setIsMenuOpen}
-        to="/favorites"
-        name="Favorites"
-      />
+      <HamburguerLink setIsMenuOpen={setIsMenuOpen} to="/favorites" name="Favorites" />
 
       <HamburguerLink setIsMenuOpen={setIsMenuOpen} to="/own" name="Own" />
 
