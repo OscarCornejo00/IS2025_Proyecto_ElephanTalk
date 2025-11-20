@@ -7,6 +7,7 @@ export class SendMessageDto {
   @MaxLength(500, { message: 'El mensaje no puede exceder 500 caracteres' })
   content: string;
 }
+
 // DTO for the response of a message
 // This DTO is used to format the message data returned by the API
 export class MessageResponseDto {
@@ -16,6 +17,9 @@ export class MessageResponseDto {
     id: string;
     username: string;
     name: string;
+    // Agregamos estos campos para que coincidan con el servicio
+    lastname?: string; 
+    picture?: string;
   };
   createdAt: Date;
 }

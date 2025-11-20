@@ -22,8 +22,7 @@ export class ChatService {
 
     const savedMessage = await message.save();
     
-    // Poblar con información del usuario
-    await savedMessage.populate('user', 'username name');
+    await savedMessage.populate('user', 'username name lastname picture');
 
     return this.formatMessageResponse(savedMessage);
   }
@@ -32,7 +31,7 @@ export class ChatService {
     try {
       const messages = await this.messageModel
         .find()
-        .populate('user', 'username name')
+        .populate('user', 'username name lastname picture')
         .sort({ createdAt: -1 })
         .limit(limit)
         .exec();
@@ -72,6 +71,8 @@ export class ChatService {
           id: userObj._id.toString(),
           username: userObj.username || 'Sin username',
           name: userObj.name || userObj.username || 'Sin nombre',
+          lastname: userObj.lastname, 
+          picture: userObj.picture,   
         },
         createdAt: message.createdAt,
       };
