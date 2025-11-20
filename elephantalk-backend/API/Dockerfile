@@ -5,10 +5,11 @@ FROM node:20
 WORKDIR /app
 
 # Copia package.json y package-lock.json
-COPY package*.json ./
+COPY package.json ./
+COPY yarn.lock ./
 
 # Instala las dependencias de la aplicación
-RUN npm install
+RUN yarn install
 
 # Copia el resto de los archivos de la aplicación
 COPY . .
@@ -17,10 +18,10 @@ COPY . .
 COPY .env .env
 
 # Compila el proyecto
-RUN npm run build
+RUN yarn build
 
 # Expone el puerto en el que correrá la aplicación
 EXPOSE 3000
 
 # Define el comando para correr la aplicación
-CMD ["npm", "run", "start:prod"]
+CMD ["yarn", "start:prod"]

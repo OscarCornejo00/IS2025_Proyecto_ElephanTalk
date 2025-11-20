@@ -22,6 +22,11 @@ function LinksSection({ classNames }) {
         to="/create"
         icon={<Icon icon="material-symbols:add-box-rounded" fontSize={30} />}
       />
+      <NavbarLink
+        data-testid="chat"
+        to="/chat"
+        icon={<Icon icon="material-symbols:chat" fontSize={30} />}
+      />
       <NavbarLink to="/own" icon={<Icon icon="mdi:account" fontSize={30} />} />
     </NavbarContent>
   );
