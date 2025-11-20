@@ -4,4 +4,6 @@ import { Role } from 'src/common/models/roles.model';
 export class TokenPayload {
   sub: Types.ObjectId;
   role: Role;
+  username: string;
+  name: string;
 }
