@@ -176,3 +176,102 @@ La adopción de estos patrones en ElephanTalk ha traído múltiples beneficios:
 
 La implementación de estos patrones refleja un enfoque estructurado y bien pensado para el desarrollo de software, asegurando que ElephanTalk no solo cumpla con los requisitos actuales sino que también esté preparada para futuras expansiones y mejoras.
 
+### Configuración para el front end del sistema
+
+Configuración
+Copiar el archivo `.env.example` y renombrarlo a `.env`. Es importante asegurarse de tener las siguientes variables de entorno:
+
+```plaintext
+# URL base de la API pública
+VITE_PUBLIC_API_URL=""
+
+# Cantidad de publicaciones por página para desplazamiento infinito
+VITE_POSTS_PER_PAGE=10
+```
+
+### Configuración para el back end del sistema
+
+Este proyecto consiste en dos servicios: una API de NestJS y una API de FastAPI. Ambos servicios están configurados para ejecutarse en contenedores Docker utilizando Docker Compose.
+
+**Requisitos**
+
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+**Configuración**
+
+Antes de construir y ejecutar los contenedores, asegúrate de tener el siguiente archivo `.env` en la raíz del proyecto de la API de NestJS (`./API/.env`):
+
+```plaintext
+MONGO_URI="mongodb://localhost:27017/tu-base-de-datos"
+PORT=3000
+JWT_SECRET="tu-secreto-jwt"
+TOXICITY_URL="http://fastapi-service:8000"
+TOXICITY_THRESHOLD=0.25
+```
+
+Asegúrate de actualizar los valores según sea necesario para tu entorno.
+
+1. Clona este repositorio en tu máquina local.
+
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+```
+
+2. Navega al directorio del proyecto y asegúrate de tener el archivo `.env` en la ubicación correcta (`./API/.env`).
+
+3. Construye y levanta los servicios usando Docker Compose.
+
+```bash
+docker-compose up --build
+```
+
+Esto construirá las imágenes Docker para ambos servicios y los levantará en sus respectivos puertos.
+
+**Servicios**
+
+- **NestJS API**: disponible en `http://localhost:3000`
+- **FastAPI Service**: disponible en `http://localhost:8000`
+
+**Detalles del Docker Compose**
+
+El archivo `docker-compose.yml` define dos servicios:
+
+- `nestjs-api`: La API de NestJS.
+- `fastapi-service`: La API de FastAPI para moderación.
+
+Ambos servicios están conectados a una red Docker llamada `backend-network`.
+
+**Dockerfile de NestJS API**
+
+El Dockerfile de la API de NestJS realiza los siguientes pasos:
+
+1. Usa una imagen base con Node.js 20.
+2. Establece el directorio de trabajo.
+3. Copia los archivos `package.json` y `package-lock.json` y las instala.
+4. Copia el resto de los archivos de la aplicación.
+5. Copia el archivo `.env`.
+6. Compila el proyecto.
+7. Expone el puerto `3000`.
+8. Define el comando para correr la aplicación.
+
+**Dockerfile de FastAPI**
+
+El Dockerfile de la API de FastAPI realiza los siguientes pasos:
+
+1. Usa una imagen base con Python 3.10.
+2. Establece el directorio de trabajo.
+3. Copia el archivo `requirements.txt` e instala las dependencias.
+4. Descarga y almacena el modelo de clasificación en una capa de la imagen.
+5. Copia el resto de los archivos de la aplicación.
+6. Expone el puerto `8000`.
+7. Define el comando para correr la aplicación.
+
+**Notas**
+
+- Asegúrate de tener Docker y Docker Compose correctamente instalados y configurados en tu sistema.
+- Si necesitas hacer cambios en la configuración, actualiza los archivos `.env` y los Dockerfiles según sea necesario.
+- Para detener los servicios, puedes usar `Ctrl+C` en la terminal donde están corriendo o ejecutar `docker-compose down` para detener y eliminar los contenedores.
+
+¡Eso es todo! Ahora deberías tener tus servicios de NestJS y FastAPI corriendo en contenedores Docker listos para usar.
