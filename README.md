@@ -176,6 +176,10 @@ La adopción de estos patrones en ElephanTalk ha traído múltiples beneficios:
 
 La implementación de estos patrones refleja un enfoque estructurado y bien pensado para el desarrollo de software, asegurando que ElephanTalk no solo cumpla con los requisitos actuales sino que también esté preparada para futuras expansiones y mejoras.
 
+### Diagrama de modelo de datos
+<img width="908" height="892" alt="Modelo Dimensional" src="https://github.com/user-attachments/assets/41f91958-816e-4602-8164-e2293d3b958d" />
+
+
 ### Configuración para el front end del sistema
 
 Configuración
