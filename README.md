@@ -1,4 +1,5 @@
-
+## Manual de usuario
+Enlace del manual de usuario: [Manual de usuario](https://github.com/OscarCornejo00/IS2025_Proyecto_ElephanTalk/blob/main/Documentos/Manual%20de%20usuario%20-%20Red%20social%20v0.2.pdf)
 
 ## Aspectos generales
 
