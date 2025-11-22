@@ -122,7 +122,7 @@ Alternativamente, macOS y las distribuciones recientes de Linux también son com
 - IDE/Editor de Código: Visual Studio Code, WebStorm, PyCharm o cualquier otro editor que soporte desarrollo en JavaScript y Python.
 - Control de Versiones: Git (Se recomienda la última versión estable).
 - Gestor de Paquetes:
-  - npm: Para gestionar las dependencias de Node.js.
+  - yarn: Para gestionar las dependencias de Node.js.
   - pip: Para gestionar las dependencias de Python.
 - Navegador Web: Un navegador web actualizado (Google Chrome, Mozilla Firefox, Safari o Microsoft Edge) para probar y depurar la interfaz de usuario y las funcionalidades del sistema.
 
@@ -209,6 +209,19 @@ VITE_PUBLIC_API_URL=""
 VITE_POSTS_PER_PAGE=10
 ```
 
+### Instalación
+
+```bash
+# Instalar dependencias
+yarn install
+
+# Ejecutar en modo desarrollo
+yarn dev
+
+# Build para producción
+yarn build
+```
+
 ### Configuración para el back end del sistema
 
 Este proyecto consiste en dos servicios: una API de NestJS y una API de FastAPI. Ambos servicios están configurados para ejecutarse en contenedores Docker utilizando Docker Compose.
@@ -236,8 +249,6 @@ Tu proyecto debe tener la siguiente estructura:
     ├── main.py
     └── ...
 ```
-
-**Configuración**
 
 Antes de construir y ejecutar los contenedores, asegúrate de tener el siguiente archivo `.env` en la raíz del proyecto de la API de NestJS (`./API/.env`):
 
