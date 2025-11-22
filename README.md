@@ -28,7 +28,22 @@ validación automática de comentarios y publicaciones hasta un sistema de repor
 inapropiado. Estos reportes serán revisados por moderadores humanos en un proceso de verificación manual, asegurando así que incluso 
 las sutilezas que el modelo automático podría pasar por alto sean adecuadamente gestionadas.
 
-### Requerimientos del Sistema
+## Nuevas funcionalidades
+
+### Chat en tiempo real
+
+El proyecto ahora incluye un sistema de chat grupal que permite a los usuarios comunicarse en tiempo real:
+
+- **Acceso**: Click en el icono de chat en el navbar
+- **Características**:
+  - Envío de mensajes instantáneo
+  - Actualización automática cada 2 segundos
+  - Diferenciación visual entre mensajes propios y ajenos
+  - Avatares de usuario
+  - Timestamps en cada mensaje
+  - Manejo de errores con notificaciones
+
+## Requerimientos del Sistema
 
 Para garantizar una experiencia óptima y el funcionamiento correcto de ElephanTalk en un entorno de producción, es esencial que los usuarios 
 accedan a la plataforma mediante un navegador web actualizado. Esto asegura la compatibilidad con las tecnologías modernas utilizadas en el 
@@ -113,7 +128,7 @@ Alternativamente, macOS y las distribuciones recientes de Linux también son com
 
 Estos requisitos aseguran que los desarrolladores cuenten con un entorno de trabajo adecuado para implementar, probar y mantener las aplicaciones de ElephanTalk de manera eficiente.
 
-### Software utilizado:
+## Software utilizado:
 
 Para el desarrollo de ElephanTalk, se seleccionaron diversas herramientas y tecnologías que facilitan la creación, prueba y despliegue de la plataforma. A continuación, se detalla cada uno de los componentes de software utilizados:
 
@@ -176,9 +191,10 @@ La adopción de estos patrones en ElephanTalk ha traído múltiples beneficios:
 
 La implementación de estos patrones refleja un enfoque estructurado y bien pensado para el desarrollo de software, asegurando que ElephanTalk no solo cumpla con los requisitos actuales sino que también esté preparada para futuras expansiones y mejoras.
 
-### Diagrama de modelo de datos
+## Diagrama de modelo de datos
 <img width="908" height="892" alt="Modelo Dimensional" src="https://github.com/user-attachments/assets/41f91958-816e-4602-8164-e2293d3b958d" />
 
+## Configuración
 
 ### Configuración para el front end del sistema
 
@@ -201,6 +217,25 @@ Este proyecto consiste en dos servicios: una API de NestJS y una API de FastAPI.
 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+
+**Estructura del Proyecto**
+
+Tu proyecto debe tener la siguiente estructura:
+
+```bash
+/path/to/your/project
+├── docker-compose.yml
+├── API
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── .env
+│   └── ...
+└── MicroserviceModeration
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── main.py
+    └── ...
+```
 
 **Configuración**
 
@@ -279,3 +314,11 @@ El Dockerfile de la API de FastAPI realiza los siguientes pasos:
 - Para detener los servicios, puedes usar `Ctrl+C` en la terminal donde están corriendo o ejecutar `docker-compose down` para detener y eliminar los contenedores.
 
 ¡Eso es todo! Ahora deberías tener tus servicios de NestJS y FastAPI corriendo en contenedores Docker listos para usar.
+
+## Próximas posibles mejoras
+
+- [ ] Notificaciones push
+- [ ] Mensajes privados
+- [ ] Indicador de "escribiendo..."
+- [ ] Emojis y reacciones
+- [ ] Compartir archivos en el chat
