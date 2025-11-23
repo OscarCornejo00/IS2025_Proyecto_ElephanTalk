@@ -8,7 +8,10 @@ Enlace del manual de contribución: [Manual de contribución](https://github.com
 Enlace de la documentación API: [Documentación API](https://elephantalk-api.onrender.com/docs)
 
 ## Plan de pruebas
-Enclace del Plan de pruebas: [Plan de pruebas](https://github.com/OscarCornejo00/IS2025_Proyecto_ElephanTalk/blob/main/Documentos/Plan%20de%20Pruebas%20-%20Sistema%20de%20Chat%20Global%20Elephantalk.pdf)
+Enclace del plan de pruebas: [Plan de pruebas](https://github.com/OscarCornejo00/IS2025_Proyecto_ElephanTalk/blob/main/Documentos/Plan%20de%20Pruebas%20-%20Sistema%20de%20Chat%20Global%20Elephantalk.pdf)
+
+## Informe de plan de pruebas
+Enclace del informe de plan de pruebas: [Informe de plan de pruebas](https://github.com/OscarCornejo00/IS2025_Proyecto_ElephanTalk/blob/main/Documentos/Informe%20de%20Ejecuci%C3%B3n%20de%20Pruebas%20-%20Chat%20Global.pdf)
 
 ## Aspectos generales
 
